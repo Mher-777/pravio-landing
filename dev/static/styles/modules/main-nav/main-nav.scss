@@ -1,0 +1,129 @@
+.menu {
+  &__dropdown {
+    position: absolute;
+    width: 815px;
+    background: linear-gradient(180deg, #FFFFFF 0%, rgba(255, 255, 255, 0.89) 97.9%);
+    border-radius: 0px 0px 20px 20px;
+    color: var(--color-bg);
+    padding: 30px 20px;
+    left: calc(50% - 30px);
+    transform: translateX(-50%) scaleY(0);
+    margin-right: -50%;
+    transition: all linear .2s;
+    transform-origin: top;
+    &-icon {
+      width: 18px;
+      height: 18px;
+      fill: var(--color-bg);
+    }
+    &-row {
+      display: flex;
+    }
+    &-col {
+      flex: 1 1 auto;
+      padding: 0 20px;
+      border-right: 1px solid rgba(150, 150, 150, 0.33);
+      &:last-child {
+        padding-right: 0;
+        border-right: none;
+      }
+      &:first-child {
+        padding-left: 0;
+      }
+    }
+    &-icon {
+      margin-right: 10px;
+      vertical-align: bottom;
+    }
+    &-link {
+      padding: 10px;
+      border-radius: 10px;
+      transition: all linear .2s;
+      display: block;
+      &:hover {
+        color: var(--color-white);
+        background-color: var(--color-green);
+        .menu__dropdown-icon {
+          fill: var(--color-white);
+        }
+      }
+    }
+  }
+  &__list {
+    display: flex;
+  }
+  &__link {
+    position: relative;
+    padding-bottom: 25px;
+    &::before {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      height: 3px;
+      background-color: var(--color-btn);
+      transition: all linear .2s;
+      left: 50%;
+      transform: translateX(-50%);
+      margin-right: -50%;
+      width: 0;
+    }
+  }
+  &__item {
+    margin-left: 45px;
+    margin-bottom: -25px;
+    &-icon {
+      margin-left: 15px;
+    }
+    &:hover {
+      .menu__dropdown {
+        transform: translateX(-50%) scaleY(1);
+      }
+      .menu__item-icon {
+        transform: rotate(180deg);
+      }
+      .menu__link {
+        &::before {
+          width: 100%;
+        }
+      }
+    }
+  }
+}
+@media (max-width: 972px) {
+  .menu__item:first-child {
+    margin-left: 0;
+  }
+  .menu__link {
+    padding-bottom: 20px;
+  }
+  .menu__item {
+    margin-bottom: -20px;
+  }
+}
+@media (max-width: 772px) {
+  .menu__item {
+    margin-left: 20px;
+  }
+}
+@media (max-width: 650px) {
+  .hamburger {
+    display: inline-block;
+    margin-top: 5px;
+    margin-left: 20px;
+  }
+  .menu__list {
+    display: block;
+    margin-top: 90px;
+  }
+  .menu__link {
+    padding-bottom: 0;
+  }
+  .menu__item {
+    margin-bottom: 15px;
+    margin-left: 0;
+    text-align: center;
+    &-icon {
+      display: none;
+    }
+  }
+}

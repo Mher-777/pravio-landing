@@ -1,0 +1,16 @@
+section.intro
+  .intro__bg(style="background-image: url(static/images/content/intro/intro-bg.jpg)")
+    .intro__inner
+      .intro__content
+        +picture('static/images/common', 'gerb', ['webp', 'png'], 'intro__decor')
+        h1.intro__title.title.title--size-big.title--weight-semibold.title--color-bg КОНСУЛЬТАЦИЯ ЮРИСТА <br>
+          span ПО ТЕЛЕФОНУ
+        span.intro__desc На Правио можно получить помощь юриста по телефону из любого региона России
+        a(href="#").intro__link.btn.btn--bg-orange.btn--border-radius
+          +icon('phone', 'btn-icon')
+          | Перезвоните мне
+      .intro__pic
+        +picture('static/images/content/intro', 'intro-image', ['webp', 'png'], 'intro__image')
+    .intro__bg-decor(style="background-image: url(static/images/content/intro/decor-intro.svg)")
+    svg(width='462' height='462' viewbox='0 0 462 462' fill='none' xmlns='http://www.w3.org/2000/svg').intro__bg-circle
+      circle(cx='231' cy='231' r='221' stroke-width='20')

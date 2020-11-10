@@ -1,0 +1,117 @@
+header.header
+  .header__decor
+  .container
+    .header__top
+      ul(data-da="intro__bg-decor, first, 972").socials.header__socials
+        li.socials__item
+          a(href="#").socials__link
+            +icon('facebook', 'socials__icon')
+        li.socials__item
+          a(href="#").socials__link
+            +icon('vk', 'socials__icon')
+        li.socials__item
+          a(href="#").socials__link
+            +icon('telegram', 'socials__icon')
+        li.socials__item
+          a(href="#").socials__link
+            +icon('whatsapp', 'socials__icon')
+      .header__info(data-da="intro__bg-decor, last, 972")
+        a(href="tel:+74954077755").header__info-item
+          +icon('phone', 'header__info-icon')
+          | +7 (495) 40-777-55
+        a(href="#").header__info-item
+          +icon('pin', 'header__info-icon')
+          | г. Москва
+      .header__search
+        a(href="#").header__search-link
+          +icon('user', 'header__icon')
+        form(action="#").header__search-form
+          input(type="text" placeholder="Поиск по услагуам и статьям..." required).header__search-input
+          button(type="submit").header__search-btn
+              +icon('search', 'header__search-icon')
+      button.hamburger.hamburger--collapse
+        span.hamburger-box
+          span.hamburger-inner
+    .header__bottom
+      .logo(data-da="header__top, first, 972")
+        a(href="#").logo__link
+          +picture('static/images/common', 'logo', ['webp', 'png'], 'logo__image')
+      nav.menu.header__menu
+        ul.menu__list
+          li.menu__item
+            a(href="#").menu__link Компания
+          li.menu__item
+            a(href="#").menu__link Вопросы
+          li.menu__item
+            a(href="#").menu__link Юристы
+          li.menu__item.menu__item--icon
+            a(href="#").menu__link Разделы
+              +icon('arrow-down', 'menu__item-icon')
+            .menu__dropdown
+              .menu__dropdown-row
+                .menu__dropdown-col
+                  ul.menu__dropdown-list
+                    li.menu__dropdown-item
+                      a(href="#").menu__dropdown-link
+                        +icon('info', 'menu__dropdown-icon')
+                        span.menu__dropdown-text Компания
+                    li.menu__dropdown-item
+                      a(href="#").menu__dropdown-link
+                        +icon('law', 'menu__dropdown-icon')
+                        span.menu__dropdown-text Темы права
+                    li.menu__dropdown-item
+                      a(href="#").menu__dropdown-link
+                        +icon('law-book', 'menu__dropdown-icon')
+                        span.menu__dropdown-text Юридические услуги
+                .menu__dropdown-col
+                  ul.menu__dropdown-list
+                    li.menu__dropdown-item
+                      a(href="#").menu__dropdown-link
+                        +icon('question-mark', 'menu__dropdown-icon')
+                        span.menu__dropdown-text Все вопросы
+                    li.menu__dropdown-item
+                      a(href="#").menu__dropdown-link
+                        +icon('paid-questions', 'menu__dropdown-icon')
+                        span.menu__dropdown-text Платные вопросы
+                    li.menu__dropdown-item
+                      a(href="#").menu__dropdown-link
+                        +icon('free-questions', 'menu__dropdown-icon')
+                        span.menu__dropdown-text Бесплатные вопросы
+                .menu__dropdown-col
+                  ul.menu__dropdown-list
+                    li.menu__dropdown-item
+                      a(href="#").menu__dropdown-link
+                        +icon('publications', 'menu__dropdown-icon')
+                        span.menu__dropdown-text Публикации
+                    li.menu__dropdown-item
+                      a(href="#").menu__dropdown-link
+                        +icon('company', 'menu__dropdown-icon')
+                        span.menu__dropdown-text Гос. учреждения
+                    li.menu__dropdown-item
+                      a(href="#").menu__dropdown-link
+                        +icon('document', 'menu__dropdown-icon')
+                        span.menu__dropdown-text Образцы документов
+                    li.menu__dropdown-item
+                      a(href="#").menu__dropdown-link
+                        +icon('checked', 'menu__dropdown-icon')
+                        span.menu__dropdown-text Проверка контрагента
+                    li.menu__dropdown-item
+                      a(href="#").menu__dropdown-link
+                        +icon('courthouse', 'menu__dropdown-icon')
+                        span.menu__dropdown-text Юридические компании
+      a(href="#").header__link.btn.btn--color-green.btn--bg-white
+        +icon('question', 'header__link-icon btn-icon')
+        | Задать вопрос
+      ul.socials.header__bottom-socials
+        li.socials__item
+          a(href="#").socials__link
+            +icon('facebook', 'socials__icon')
+        li.socials__item
+          a(href="#").socials__link
+            +icon('vk', 'socials__icon')
+        li.socials__item
+          a(href="#").socials__link
+            +icon('telegram', 'socials__icon')
+        li.socials__item
+          a(href="#").socials__link
+            +icon('whatsapp', 'socials__icon')
