@@ -51,4 +51,36 @@ $(function () {
         });
     }
     header()
+    const lawyerSlider = () => {
+        $('.lawyer__slider').slick({
+            slidesToShow: 4,
+            slidesToScroll: 1,
+            nextArrow: '<button class="arrow arrow--left"><svg class="icon icon-arrow icon-arrow--s-small icon-arrow--color-orange"><use xlink:href="static/images/sprite/symbol/sprite.svg#arrow-left"></use></svg></button>',
+            prevArrow: '<button class="arrow arrow--right"><svg class="icon icon-arrow icon-arrow--s-small icon-arrow--color-orange"><use xlink:href="static/images/sprite/symbol/sprite.svg#arrow-right"></use></svg></button>',
+            responsive: [
+                {
+                    breakpoint: 1121,
+                    settings: {
+                        slidesToShow: 3,
+                    }
+                },
+                {
+                    breakpoint: 901,
+                    settings: {
+                        slidesToShow: 4,
+                    }
+                },
+                {
+                    breakpoint: 600,
+                    settings: {
+                        slidesToShow: 2,
+                        slidesToScroll: 2,
+                        rows: 2,
+                        appendArrows: '.lawyer__arrows--mobile'
+                    }
+                }
+            ]
+        })
+    }
+    lawyerSlider()
 })

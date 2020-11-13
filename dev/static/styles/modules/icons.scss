@@ -20,3 +20,27 @@
   fill: transparent;
   stroke: #fff;
 }
+.icon-arrow {
+  &--s {
+    &-small {
+      width: 17px;
+      height: 17px;
+    }
+  }
+  &--color {
+    &-orange {
+      stroke: var(--color-btn);
+    }
+  }
+}
+.arrow {
+  position: absolute;
+  z-index: 1;
+  top: 40px;
+  &--left {
+    right: 0;
+  }
+  &--right {
+    left: 0;
+  }
+}
