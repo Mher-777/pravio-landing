@@ -1,2 +1,10 @@
 @import "../../../../node_modules/normalize.css/normalize";
 @import "../../../../node_modules/slick-carousel/slick/slick.scss";
+html.no-webp {
+  .advantages__bg {
+    background-image: url(../images/content/advantages/advantages-bg.png) !important;
+  }
+  //.difference__bg {
+  //  background-image: url(../images/content/difference/difference-bg.png) !important;
+  //}
+}
