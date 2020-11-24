@@ -2,7 +2,7 @@ extends layout/main
 
 block variables
     -var title = 'Главная страница'
-
+    -var header = true
 block content
   include pages/main/intro
   section.faq
@@ -59,7 +59,7 @@ block content
                 button(type="submit").faq__item-btn.btn.btn--size-tiny.btn--color-orange.btn--border-orange Выбрать
       span.faq__desc Нажимая кнопку «Задать вопрос», я принимаю условия Пользовательского соглашения и условия Политики конфиденциальности и Политикой обработки персональных данных.
   section.lawyer
-    .lawyer__bg(style="background-image: url(static/images/content/lawyer/lawyer-bg.jpg)")
+    .lawyer__bg(data-bg="static/images/content/lawyer/lawyer-bg.jpg" data-bg-webp="static/images/content/lawyer/lawyer-bg.webp")
       .container
         .lawyer__content
           .section-top

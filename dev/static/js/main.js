@@ -1,18 +1,41 @@
-document.addEventListener("DOMContentLoaded", function () {
-    function WepP(callback) {
-        const webP = new Image();
-        webP.src = 'data:image/webp;base64,UklGRi4AAABXRUJQVlA4TCEAAAAvAUAAEB8wAiMw' +
-            'AgSSNtse/cXjxyCCmrYNWPwmHRH9jwMA';
-        webP.onload = webP.onerror = function () {
-            callback(webP.height === 2);
-        };
+function canUseWebp() {
+    let elem = document.createElement('canvas');
+    if (!!(elem.getContext && elem.getContext('2d'))) {
+        return elem.toDataURL('image/webp').indexOf('data:image/webp') == 0;
     }
-    WepP(function(supported) {
-        if(!supported) {
-            $('html').addClass('no-webp')
+    return false;
+}
+window.onload = function () {
+    let images = document.querySelectorAll('[data-bg]');
+    for (let i = 0; i < images.length; i++) {
+        let image = images[i].getAttribute('data-bg');
+        images[i].style.backgroundImage = 'url(' + image + ')';
+    }
+
+    let isitFirefox = window.navigator.userAgent.match(/Firefox\/([0-9]+)\./);
+    let firefoxVer = isitFirefox ? parseInt(isitFirefox[1]) : 0;
+
+    if (canUseWebp() || firefoxVer >= 65) {
+        let imagesWebp = document.querySelectorAll('[data-bg-webp]');
+        for (let i = 0; i < imagesWebp.length; i++) {
+            let imageWebp = imagesWebp[i].getAttribute('data-bg-webp');
+            imagesWebp[i].style.backgroundImage = 'url(' + imageWebp + ')';
         }
-    });
-});
+    }
+};
+function calcScroll() {
+    let div = document.createElement('div')
+    div.style.width = '50px';
+    div.style.height = '50px';
+    div.style.overflowY = 'scroll';
+    div.style.visibility = 'hidden';
+
+    document.body.appendChild(div);
+    let scrollWidth = div.offsetWidth - div.clientWidth;
+    div.remove();
+
+    return scrollWidth;
+}
 $(function () {
     const header = () => {
         const menu = $('.header__bottom')
@@ -101,33 +124,34 @@ $(function () {
     lawyerSlider()
     const scrollCounter = () => {
         let counted = 0;
-        $(window).scroll(function () {
-            let oTop = $('.statistics').offset().top - window.innerHeight;
-            if (counted === 0 && $(window).scrollTop() > oTop) {
-                $('.statistics__item-number').each(function () {
-                    var $this = $(this),
-                        countTo = $this.attr('data-number');
-                    $({
-                        countNum: $this.text()
-                    }).animate({
-                        countNum: countTo
-                    }, {
-                        duration: 2000,
-                        easing: 'swing',
-                        step: function () {
-                            $this.text(Math.floor(this.countNum));
-                        },
-                        complete: function () {
-                            $this.text(this.countNum);
-                            //alert('finished');
-                        }
+        const section = $('.statistics')
+        if(section.length > 0)
+            $(window).scroll(function () {
+                let oTop = section.offset().top - window.innerHeight;
+                if (counted === 0 && $(window).scrollTop() > oTop) {
+                    $('.statistics__item-number').each(function () {
+                        const $this = $(this),
+                            countTo = $this.attr('data-number');
+                        $({
+                            countNum: $this.text()
+                        }).animate({
+                            countNum: countTo
+                        }, {
+                            duration: 2000,
+                            easing: 'swing',
+                            step: function () {
+                                $this.text(Math.floor(this.countNum));
+                            },
+                            complete: function () {
+                                $this.text(this.countNum);
+                            }
 
+                        });
                     });
-                });
-                counted = 1;
-            }
+                    counted = 1;
+                }
 
-        });
+            });
     }
     scrollCounter()
     const advantagesSlider = () => {
@@ -185,6 +209,30 @@ $(function () {
         })
     }
     reviewsSlider()
+    const popup = () => {
+        const header = $('.header__bottom')
+        const dataFancybox = $('[data-fancybox]');
+        dataFancybox.fancybox({
+            keyboard: true,
+            image: {
+                preload: true
+            },
+            infobar: false,
+            clickContent: function clickContent(current, event) {
+                return current.type === "image" ? "zoom" : false;
+            },
+            onInit: function () {
+                header.css('transform', 'translateX(' + -calcScroll() / 2 + 'px)')
+            },
+            afterClose: function () {
+                header.css('transform', '')
+            }
+        });
+
+        $.fancybox.defaults.animationEffect = "circular";
+        $.fancybox.defaults.animationDuration = 500;
+    }
+    popup()
 })
 
 

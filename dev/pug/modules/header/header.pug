@@ -2,26 +2,28 @@ header.header
   .header__decor
   .container
     .header__top
-      ul(data-da="intro__bg-decor, first, 972").socials.header__socials
-        li.socials__item
-          a(href="#").socials__link
-            +icon('facebook', 'socials__icon')
-        li.socials__item
-          a(href="#").socials__link
-            +icon('vk', 'socials__icon')
-        li.socials__item
-          a(href="#").socials__link
-            +icon('telegram', 'socials__icon')
-        li.socials__item
-          a(href="#").socials__link
-            +icon('whatsapp', 'socials__icon')
-      .header__info(data-da="intro__bg-decor, last, 972")
-        a(href="tel:+74954077755").header__info-item
-          +icon('phone', 'header__info-icon')
-          | +7 (495) 40-777-55
-        a(href="#").header__info-item
-          +icon('pin', 'header__info-icon')
-          | г. Москва
+      if (header === true)
+        ul(data-da="intro__bg-decor, first, 972").socials.header__socials
+          li.socials__item
+            a(href="#").socials__link
+              +icon('facebook', 'socials__icon')
+          li.socials__item
+            a(href="#").socials__link
+              +icon('vk', 'socials__icon')
+          li.socials__item
+            a(href="#").socials__link
+              +icon('telegram', 'socials__icon')
+          li.socials__item
+            a(href="#").socials__link
+              +icon('whatsapp', 'socials__icon')
+      if (header === true)
+        .header__info(data-da="intro__bg-decor, last, 972")
+          a(href="tel:+74954077755").header__info-item
+            +icon('phone', 'header__info-icon')
+            | +7 (495) 40-777-55
+          a(href="#").header__info-item
+            +icon('pin', 'header__info-icon')
+            | г. Москва
       .header__search
         a(href="#").header__search-link
           +icon('user', 'header__icon')

@@ -2,7 +2,6 @@
 package-lock.json
 node_modules
 .idea
-dist
 /*.exe.stackdump
 .vscode/*
 !.vscode/settings.json

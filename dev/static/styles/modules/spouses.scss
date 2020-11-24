@@ -1,0 +1,133 @@
+.spouses {
+  padding: 70px 0;
+
+  &__row {
+    margin-top: 20px;
+    background-color: #E3FBEF;
+    border: 1px solid #17BA9B;
+    border-radius: 0 50px 50px 50px;
+    display: flex;
+    padding: 30px 0;
+  }
+
+  &__col {
+    padding: 0 30px;
+    flex: 1 1 auto;
+    text-align: center;
+
+    &:not(:first-child) {
+      position: relative;
+
+      &::before {
+        content: '';
+        width: 1px;
+        height: calc(100% - 25px);
+        background-color: rgba(25, 186, 155, 0.26);
+        left: 0;
+        top: 0;
+        position: absolute;
+      }
+    }
+  }
+
+  &__icon {
+    margin: 0 auto;
+    object-position: center;
+    object-fit: scale-down;
+    height: 80px;
+    max-width: 100px;
+  }
+
+  &__subtitle {
+    margin-top: 20px;
+  }
+
+  &__text {
+    display: block;
+    margin-top: 7px;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 19px;
+    color: #575757;
+  }
+}
+.spouses__subtitle.title {
+  font-size: 24px;
+  line-height: 31px;
+}
+@media (max-width: 900px) {
+  .spouses__row {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .spouses__col {
+    max-width: 50%;
+    margin-bottom: 25px;
+
+    &:last-child {
+      &::before {
+        display: none;
+      }
+    }
+  }
+}
+
+@media (max-width: 972px) {
+  .spouses__col {
+    padding: 0 15px;
+  }
+}
+
+@media (max-width: 772px) {
+  .spouses__col {
+    max-width: 100%;
+    width: 50%;
+  }
+}
+
+@media (max-width: 600px) {
+  .spouses__col {
+    width: 100%;
+    padding-bottom: 15px;
+    margin-bottom: 15px;
+
+    &:not(:last-child) {
+      position: relative;
+    }
+
+    &:not(:last-child)::before {
+      background: rgba(25, 186, 155, 0.26);
+      content: '';
+      height: 1px;
+      width: 250px;
+      left: 50%;
+      transform: translateX(-50%);
+      margin-right: -50%;
+      top: auto;
+      bottom: 0;
+      position: absolute;
+    }
+  }
+  .spouses__icon {
+    object-position: bottom;
+    max-width: 70px;
+    height: 70px;
+  }
+  .spouses__row {
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+}
+
+@media (max-width: 500px) {
+  .spouses {
+    padding: 50px 0;
+  }
+}
+
+@media (max-width: 340px) {
+  .spouses__col {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+}
