@@ -233,6 +233,16 @@ $(function () {
         $.fancybox.defaults.animationDuration = 500;
     }
     popup()
+    const formTabs = () => {
+        const elem = $('.form__item')
+        elem.on('click', function () {
+            if(elem.hasClass('form__item--active')) {
+                elem.removeClass('form__item--active')
+            }
+            $(this).toggleClass('form__item--active')
+        })
+    }
+    formTabs()
 })
 
 
