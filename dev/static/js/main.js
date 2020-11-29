@@ -243,6 +243,36 @@ $(function () {
         })
     }
     formTabs()
+    const customSelect = () => {
+        $('.select').select2({
+            minimumResultsForSearch: -1,
+            width: null,
+        })
+            .on('select2:open', function(e){
+                $('.select2-results__options').scrollbar().parent().addClass('scrollbar-inner');
+            });
+    }
+    customSelect()
+    const fileUpload = () => {
+        $(".file-upload input[type=file]").change(function () {
+            let filename = $(this).val().replace(/.*\\/, "");
+            $(this).closest('.file-upload').find('.file-upload__text').html(filename);
+        });
+    }
+    fileUpload()
+    const radioDisabled = () => {
+        const input = $('.form__info-input')
+        const radio = $('.form__info-radio').find('input')
+        radio.on('change', function () {
+            if($(this).attr('id') === 'pay') {
+                input.removeAttr('disabled')
+                input.select()
+            } else {
+                input.attr('disabled', 'disabled')
+            }
+        })
+    }
+    radioDisabled()
 })
 
 

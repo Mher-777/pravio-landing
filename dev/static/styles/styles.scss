@@ -233,5 +233,13 @@ button {
     padding-left: 10px;
     padding-right: 10px;
   }
+  .textarea {
+    padding: 10px 15px;
+  }
+}
+@media (max-width: 400px) {
+  .textarea {
+
+  }
 }
 @import "modules/modules";

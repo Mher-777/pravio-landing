@@ -172,6 +172,7 @@ header { flex: 0 0 auto; }
   .header__search {
     margin-left: auto;
     transition: all linear .2s;
+    display: none;
     &--close {
       transform: translateY(calc(-100% - 28px));
     }

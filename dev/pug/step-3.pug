@@ -32,44 +32,49 @@ block content
           h2.title.title--size-small.title--align-center.form__title ЗАКАЖИТЕ ЛЮБОЙ ДОКУМЕНТ У ПРОФЕССИОНАЛА
           span.title.title--size-tiny.title--color-gray.title--align-center Чтобы задать вопрос юристу онлайн, Вам потребуется всего лишь несколько минут и заполнить пару шагов
         .form__steps
-          .form__step.form__step--current
+          .form__step.form__step--previous
             | 1
-          .form__step
+          .form__step.form__step--previous
             | 2
-          .form__step
+          .form__step.form__step--previous.form__step--active
             | 3
         .form__content
-          h3.title.title--align-center.title--size-medium.title--color-green.form__subtitle Выберите документ
-          .form__items
-            .form__item
-              +icon('briefcase', 'form__item-icon')
-              .form__item-box
-                strong.form__item-title Регистрация бизнеса
-                span.form__item-text Комплекты документов для регистрации ООО, ИП, ТСЖ и др.
-            .form__item
-              +icon('auction', 'form__item-icon')
-              .form__item-box
-                strong.form__item-title Документы в суд
-                span.form__item-text Исковое заявление, отзыв на исковое заявление, ходатайство, жалоба на решение суда и др.
-            .form__item
-              +icon('lawyer-user', 'form__item-icon')
-              .form__item-box
-                strong.form__item-title Жалоба на чиновника
-                span.form__item-text Жалоба на действия должностного лица, судебного пристава, сотрудника ГИБДД и др.
-            .form__item
-              +icon('paper', 'form__item-icon')
-              .form__item-box
-                strong.form__item-title Договоры и соглашения
-                span.form__item-text Договоры аренды, подряда, купли-продажи, займа, комиссии и др.
-            .form__item
-              +icon('sad', 'form__item-icon')
-              .form__item-box
-                strong.form__item-title Претензии потребителей
-                span.form__item-text Претензии на возврат денег за товар. Претензии в страховую, в банк, к ЖКХ и др.
-            .form__item
-              +icon('document-handle', 'form__item-icon')
-              .form__item-box
-                strong.form__item-title Другое
-                span.form__item-text Любой другой документ. Вы можете описать его самостоятельно.
-          button(type="submit").btn.btn--bg-orange.btn--size-tiny.form__btn.form__btn--margin-auto Далее
+          h3.title.title--align-center.title--size-medium.title--color-green.form__subtitle Информация
+          .form__row
+            label.form__control.label
+              +icon('arrow-down', 'label__icon label__icon--fill-orange')
+              input(type="text" placeholder="Имя *" required).input.form__input
+              span.label__text Пример: «Как вернуть некачественный товар в интернет-магазин?»
+            label.form__control.label
+              +icon('arrow-down', 'label__icon label__icon--fill-orange')
+              input(type="email" placeholder="Email *" required).input.form__input
+              span.label__text Для уведомлений об ответах юриста
+            label.form__control.label
+              +icon('arrow-down', 'label__icon label__icon--fill-orange')
+              input(type="tel" placeholder="Телефон *" required).input.form__input
+              span.label__text Пример: «Как вернуть некачественный товар в интернет-магазин?»
+            label.form__control.label
+              +icon('arrow-down', 'label__icon label__icon--fill-orange')
+              input(type="text" placeholder="Город *" required).input.form__input
+              span.label__text Для уведомлений об ответах юриста
+          h3.title.title--align-center.title--size-medium.title--color-green.form__subtitle.form__subtitle--border Стоимость документа
+          .form__info
+            +icon('arrow-down', 'form__info-icon label__icon--fill-orange')
+            span.form__info-text Стоимость документа:
+            .form__info-control
+              label.radio.form__info-radio
+                span.radio__text По договоренности с юристом
+                input(type="radio" name="price" checked)
+                span.radio__custom
+              label.radio.form__info-radio
+                span.radio__text Я планирую заплатить
+                input(type="radio" name="price" id="pay")
+                span.radio__custom
+            .form__info-control
+              input(type="text" disabled="disabled").input.form__info-input
+              span.form__info-text руб.
+          button(type="submit").btn.btn--bg-orange.btn--size-tiny.form__btn.form__btn--width Отправить
+          a(href="#").back
+            +icon('arrow-down', 'back__icon')
+            | Назад
   include pages/main/banner
