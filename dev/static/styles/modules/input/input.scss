@@ -230,10 +230,22 @@
     }
   }
 }
+.file-upload__btn_icon {
+  fill: var(--color-btn);
+  margin-right: 9px;
+  width: 17px;
+  height: 17px;
+}
 @media (max-width: 400px) {
   .file-upload__btn_text {
     font-size: 14px;
     line-height: 19px;
+  }
+  .file-upload__btn_icon {
+    fill: var(--color-btn);
+    margin-right: 9px;
+    width: 15px;
+    height: 15px;
   }
   .file-upload__text {
     font-size: 9px;

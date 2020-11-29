@@ -64,7 +64,9 @@ block content
                 .file-upload__btn
                   label.file-upload__btn_label
                     input(type="file")
-                    span.file-upload__btn_text Прикрепить файл
+                    span.file-upload__btn_text
+                      +icon('paper-clip', 'file-upload__btn_icon')
+                      | Прикрепить файл
                 span.file-upload__text Допустимый размер файла до 10Мб. Доступные расширения: jpg,jpeg,png,pdf,doc,docx,odt
           .form__row
             .form__control.label
