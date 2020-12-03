@@ -162,6 +162,13 @@
     margin-bottom: 10px;
     font-size: 14px;
     line-height: 19px;
+    a {
+      color: var(--color-green);
+      display: inline;
+      &:hover {
+        text-decoration: underline;
+      }
+    }
   }
   &__link {
     margin-right: 20px;

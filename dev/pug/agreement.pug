@@ -72,4 +72,31 @@ block content
                 strong.form__item-title Другое
                 span.form__item-text Любой другой документ. Вы можете описать его самостоятельно.
           button(type="submit").btn.btn--bg-orange.btn--size-tiny.form__btn.form__btn--margin-auto Далее
+      .agreement-block
+        .agreement-block__icon !
+        .agreement-block__box
+          span.agreement-block__text Нажимая кнопку «Создать заявку», я принимаю условия Пользовательского соглашения и условия Политики конфиденциальности и Политикой обработки персональных данных.
+  section.product
+    .container
+      .product__inner
+        h2.title.title--color-bg.title--size-small.title--align-center.product__title Договор о совместной деятельности
+        .product__row
+          img(src="static/images/common/product-icon.svg" alt="").product__image
+          .product__item
+            +icon('paper-clip', 'product__item-icon')
+            .product__item-box
+              strong.product__item-subtitle 4 страницы
+              span.product__item-text Объём договора
+          .product__item
+            +icon('clock', 'product__item-icon')
+            .product__item-box
+              strong.product__item-subtitle 48 часов
+              span.product__item-text Срок Исполнения
+          .product__total
+            span.product__total-price.title.title--color-green.title--size-medium ₽ 3000
+            span.product__total-text Стоимость договора
+        .product__btns
+          a(href="#").btn.btn--bg-green.btn--size-tiny.product__btn Заказать
+          a(href="#").btn.btn--bg-orange.btn--size-tiny.product__btn Купить в кредит
+          a(href="#").btn.btn--bg-green.btn--size-tiny.product__btn В корзину
   include pages/main/banner

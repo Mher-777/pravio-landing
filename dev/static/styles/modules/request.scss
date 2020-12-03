@@ -18,6 +18,19 @@
       top: 0;
     }
   }
+  .agreement-block {
+    padding: 15px 25px;
+    margin-bottom: 30px;
+    .agreement-block__icon {
+      height: 42px;
+      width: 42px;
+      font-size: 24px;
+      line-height: 33px;
+    }
+    .agreement-block__text {
+      margin-bottom: 0;
+    }
+  }
 }
 .form {
   background: var(--color-white);
