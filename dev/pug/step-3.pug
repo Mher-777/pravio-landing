@@ -1,0 +1,80 @@
+extends layout/main
+
+block variables
+    -var title = 'Брачный договор'
+block content
+  include pages/agreement/agreement-slider
+  include pages/agreement/spouses
+  include pages/agreement/agreement-desc
+  include pages/agreement/agreement-documents
+  include pages/agreement/contract
+  section.agreement-desc
+    .container
+      h2.agreement-desc__title.title.title--color-bg.title--size-small Брачный договор
+      h4.agreement-desc__subtitle.title.title--color-gray.title--size-tiny Особенности содержания брачного договора регламентируются <a href="#">статьей 42 СК РФ</a>
+      .agreement-desc__content.agreement-desc__content--width
+        p Можно заключать как в отношении имеющегося на данный момент, так и в отношении приобретаемого в будущем имущества. Супруги вправе ограничить свои права и обязанности определенным в брачном договоре сроком, либо поставить возникновение и прекращение имущественных прав и обязанностей в зависимость от определенных условий.
+        p При заключении брачного договора следует учитывать, что в него не могут быть включены следующие условия:
+        ul
+          li ограничение дееспособности и правоспособности любого из супругов (запрет на обращение в суд для защиты своих прав и интересов, на ведение предпринимательской деятельности, на наследование, на оформление завещания, на получение доходов)
+          li условия по регулированию личных отношений между супругами. То есть написать, что жена не должна разговаривать каким-то особым тоном, а муж не должен косо смотреть на супругу — нельзя
+          li определение личных прав и обязанностей супругов по отношению к их детям
+          li ограничение прав нетрудоспособного супруга, нуждающегося в содержании
+          li иные условия, ставящие одного из супругов в неблагоприятное положение и противоречащие нормам семейного права
+        p Для того чтобы изменить или расторгнуть брачный договор, требуется соглашение супругов по данному вопросу. Соглашение составляется в той же форме, что и сам брачный договор. Внесение изменений в договор или его расторжение возможно в любое время по взаимному согласию супругов. Законом не допускается отказ от исполнения договора только одного из супругов.
+          | <br> В соответствии с установленными ГК РФ правилами по изменению и расторжению договоров (глава 29,) брачный договор может быть расторгнут в судебном порядке по требованию одного из супругов. Брачный договор прекращает свое действие с момента расторжения брака. Если в договоре были предусмотрены обязательства супругов после развода, такие обязательства сохраняют свою силу и после расторжения брака.
+
+  section.request
+    .request__bg
+    .container
+      form(action="/").form
+        .form__top
+          h2.title.title--size-small.title--align-center.form__title ЗАКАЖИТЕ ЛЮБОЙ ДОКУМЕНТ У ПРОФЕССИОНАЛА
+          span.title.title--size-tiny.title--color-gray.title--align-center Чтобы задать вопрос юристу онлайн, Вам потребуется всего лишь несколько минут и заполнить пару шагов
+        .form__steps
+          .form__step.form__step--previous
+            | 1
+          .form__step.form__step--previous
+            | 2
+          .form__step.form__step--previous.form__step--active
+            | 3
+        .form__content
+          h3.title.title--align-center.title--size-medium.title--color-green.form__subtitle Информация
+          .form__row
+            label.form__control.label
+              +icon('arrow-down', 'label__icon label__icon--fill-orange')
+              input(type="text" placeholder="Имя *" required).input.form__input
+              span.label__text Пример: «Как вернуть некачественный товар в интернет-магазин?»
+            label.form__control.label
+              +icon('arrow-down', 'label__icon label__icon--fill-orange')
+              input(type="email" placeholder="Email *" required).input.form__input
+              span.label__text Для уведомлений об ответах юриста
+            label.form__control.label
+              +icon('arrow-down', 'label__icon label__icon--fill-orange')
+              input(type="tel" placeholder="Телефон *" required).input.form__input
+              span.label__text Пример: «Как вернуть некачественный товар в интернет-магазин?»
+            label.form__control.label
+              +icon('arrow-down', 'label__icon label__icon--fill-orange')
+              input(type="text" placeholder="Город *" required).input.form__input
+              span.label__text Для уведомлений об ответах юриста
+          h3.title.title--align-center.title--size-medium.title--color-green.form__subtitle.form__subtitle--border Стоимость документа
+          .form__info
+            +icon('arrow-down', 'form__info-icon label__icon--fill-orange')
+            span.form__info-text Стоимость документа:
+            .form__info-control
+              label.radio.form__info-radio
+                span.radio__text По договоренности с юристом
+                input(type="radio" name="price" checked)
+                span.radio__custom
+              label.radio.form__info-radio
+                span.radio__text Я планирую заплатить
+                input(type="radio" name="price" id="pay")
+                span.radio__custom
+            .form__info-control
+              input(type="text" disabled="disabled").input.form__info-input
+              span.form__info-text руб.
+          button(type="submit").btn.btn--bg-orange.btn--size-tiny.form__btn.form__btn--width Отправить
+          a(href="#").back
+            +icon('arrow-down', 'back__icon')
+            | Назад
+  include pages/main/banner

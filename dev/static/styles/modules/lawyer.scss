@@ -1,0 +1,243 @@
+.lawyer {
+  background-color: #E3FBEF;
+  &__content {
+    position: relative;
+    padding: 40px 0;
+    max-width: 650px;
+    width: 100%;
+  }
+  &__bg {
+    background-repeat: no-repeat;
+    background-position: top right;
+    position: relative;
+    max-width: 2600px;
+    margin: 0 auto;
+    &::before {
+      content: '';
+      position: absolute;
+      background: linear-gradient(-270deg, #E3FBEF 63.8%, rgba(196, 196, 196, 0) 100%);
+      width: calc(100% - 350px);
+      height: 100%;
+      top: 0;
+      left: 0;
+    }
+  }
+  &__title {
+    margin-top: 35px;
+  }
+  &__subtitle {
+    margin-top: 10px;
+    &::after {
+      content: '';
+      display: block;
+      width: 195px;
+      height: 1px;
+      background-color: var(--color-btn);
+      margin-top: 15px;
+    }
+  }
+  &__list {
+    &-item {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      margin-top: 20px;
+    }
+    &-text {
+      margin-right: 20px;
+      font-size: 14px;
+      line-height: 19px;
+      font-weight: 600;
+      &:last-child {
+        margin-right: 0;
+        max-width: 485px;
+        width: 100%;
+      }
+      &--weight-bold {
+        font-weight: 900;
+      }
+      &--color-green {
+        color: var(--color-green);
+      }
+    }
+  }
+  &__slider {
+    padding: 0 30px;
+    margin: 40px -50px 0 -70px;
+    .slick-slide {
+      text-align: center;
+    }
+  }
+  &__image {
+    img {
+      border-radius: 20px 0px 20px 20px;
+      margin: 0 auto 10px;
+    }
+  }
+  &__text {
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 18px;
+    color: var(--color-bg);
+    display: block;
+  }
+  &__slide {
+    max-width: 135px;
+    margin: 0 auto;
+    padding-top: 10px;
+    &-link {
+      transition: all linear .2s;
+      &:hover {
+        transform: translateY(-10px);
+        .lawyer__text {
+          font-weight: 900;
+        }
+      }
+    }
+  }
+  &__links {
+    display: flex;
+    align-items: center;
+    margin-top: 30px;
+  }
+  &__link {
+    font-size: 14px;
+    line-height: 19px;
+    font-weight: 900;
+    color: var(--color-btn);
+    position: relative;
+    margin-left: 35px;
+
+    &::before {
+      content: '';
+      position: absolute;
+      height: 1px;
+      width: 100%;
+      background-color: var(--color-btn);
+      transition: all linear .2s;
+      bottom: 0;
+      left: 0;
+    }
+    &:first-child {
+      margin-left: 0;
+    }
+    &:hover {
+      &::before {
+        width: 0;
+      }
+    }
+  }
+}
+.lawyer__arrows {
+  display: none;
+}
+@media (max-width: 1280px) {
+  .lawyer__slider {
+    padding: 0 30px;
+    margin: 40px 0 0;
+  }
+}
+@media (max-width: 1120px) {
+  .lawyer__content {
+    max-width: 490px;
+  }
+  .lawyer__slider {
+    margin-top: 20px;
+  }
+  .lawyer__list-item {
+    margin-top: 15px;
+  }
+  .lawyer__title {
+    margin-top: 25px;
+  }
+  .lawyer__bg {
+    background-position: 150% 0;
+  }
+}
+@media (max-width: 972px) {
+  .lawyer__bg {
+    background-position: 290% 0;
+  }
+}
+@media (max-width: 900px) {
+  .lawyer__bg {
+    background-image: none !important;
+  }
+  .lawyer__content {
+    max-width: 640px;
+  }
+
+}
+@media (max-width: 600px) {
+  .lawyer__arrows {
+    &--mobile {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 95px;
+      margin: 0 auto;
+      .arrow {
+        position: static;
+
+        &--right {
+
+        }
+        &--left {
+          position: relative;
+          top: auto;
+          &::before {
+            content: '';
+            position: absolute;
+            width: 43px;
+            height: 2px;
+            background-color: var(--color-btn);
+            left: -52px;
+            top: 50%;
+          }
+        }
+      }
+    }
+  }
+  .lawyer__slider {
+    max-width: 400px;
+    margin: 5px auto 0;
+    padding-bottom: 40px;
+
+  }
+  .lawyer__slide {
+    margin-top: 20px;
+  }
+}
+@media (max-width: 450px) {
+  .lawyer__subtitle::after {
+    margin-top: 7px;
+  }
+  .lawyer__list-item {
+    display: block;
+    & > * {
+      display: block;
+    }
+  }
+  .lawyer__links {
+    margin-top: 25px;
+  }
+}
+@media (max-width: 350px) {
+  .lawyer__slider {
+    padding-left: 0;
+    padding-right: 0;
+    padding-bottom: 25px;
+  }
+  .lawyer__list-text {
+    font-size: 12px;
+    line-height: 16px;
+  }
+  .lawyer__link {
+    font-size: 12px;
+    line-height: 16px;
+  }
+  .lawyer__text {
+    font-size: 12px;
+    line-height: 15px;
+  }
+}

@@ -1,0 +1,129 @@
+extends layout/main
+
+block variables
+    -var title = 'Главная страница'
+    -var header = true
+block content
+  include pages/main/intro
+  section.faq
+    .container
+      .faq__content
+        .faq__top
+          h2.title.title--size-small.title--align-center.faq__title Задать вопрос
+        form(action="#").faq__form
+          .faq__form-row
+            label.faq__control.faq__control--width.label
+              +icon('arrow-down', 'label__icon label__icon--fill-orange')
+              input(type="text" placeholder="Кратко поясните суть проблемы").input.faq__control-input
+              span.label__text.faq__control-text Пример: «Как вернуть некачественный товар в интернет-магазин?»
+            label.faq__control.faq__control--width.label
+              +icon('arrow-down', 'label__icon label__icon--fill-orange')
+              textarea(placeholder="Расскажите нам о вашей проблеме").textarea.faq__control-textarea
+          h3.title.title--align-center.title--size-medium.title--color-green.faq__form-title Выберите тариф
+          .faq__items
+            .faq__item.faq__item--block
+              .faq__item-head.faq__item-head--bg-orange
+                h3.title.title--align-center.title--size-tiny.title--color-white VIP
+              p.faq__item-desc Сложная ситуация, допускающая противоречивость и требующая изучения дополнительных документов и практик.
+              .faq__item-body
+                ul.faq__item-list
+                  li.faq__item-schedule
+                    +icon('clock', 'faq__item-icon')
+                    span.faq__item-text Время разговора <strong>— до 1 часа</strong>
+                strong.faq__item-price(data-value="/ руб") 1200
+              .faq__item-footer
+                button(type="submit").faq__item-btn.btn.btn--size-tiny.btn--color-orange.btn--border-orange Выбрать
+            .faq__item.faq__item--block
+              .faq__item-head.faq__item-head--bg-green
+                h3.title.title--align-center.title--size-tiny.title--color-white ОБЫЧНЫЙ
+              p.faq__item-desc Ситуация, предполагающая уточнения и более детальное погружение в проблему.
+              .faq__item-body
+                ul.faq__item-list
+                  li.faq__item-schedule
+                    +icon('clock', 'faq__item-icon')
+                    span.faq__item-text Время разговора <strong>— до 30 минут</strong>
+                strong.faq__item-price(data-value="/ руб") 700
+              .faq__item-footer
+                button(type="submit").faq__item-btn.btn.btn--size-tiny.btn--color-orange.btn--border-orange Выбрать
+            .faq__item.faq__item--block
+              .faq__item-head.faq__item-head--bg-green
+                h3.title.title--align-center.title--size-tiny.title--color-white ЛЕГКИЙ
+              p.faq__item-desc Несложная ситуация, при которой юрист даст однозначно верный ответ за короткое время.
+              .faq__item-body
+                ul.faq__item-list
+                  li.faq__item-schedule
+                    +icon('clock', 'faq__item-icon')
+                    span.faq__item-text Время разговора <strong>— до 15 минут</strong>
+                strong.faq__item-price(data-value="/ руб") 400
+              .faq__item-footer
+                button(type="submit").faq__item-btn.btn.btn--size-tiny.btn--color-orange.btn--border-orange Выбрать
+      span.faq__desc Нажимая кнопку «Задать вопрос», я принимаю условия Пользовательского соглашения и условия Политики конфиденциальности и Политикой обработки персональных данных.
+  section.lawyer
+    .lawyer__bg(data-bg="static/images/content/lawyer/lawyer-bg.jpg" data-bg-webp="static/images/content/lawyer/lawyer-bg.webp")
+      .container
+        .lawyer__content
+          .section-top
+            .section-top__content
+              h2.title.title--size-small Ведущие юристы Москвы
+              span.lawyer__subtitle.section-top__text.title.title--size-tiny.title--color-gray Осуществляют консультацию
+          h3.lawyer__title.title.title--size-medium Иванов Иван Иванович
+          ul.lawyer__list
+            li.lawyer__list-item
+              span.lawyer__list-text Юридический стаж
+              span.lawyer__list-text.lawyer__list-text--weight-bold.lawyer__list-text--color-green 5 лет
+            li.lawyer__list-item
+              span.lawyer__list-text Специализация
+              span.lawyer__list-text.lawyer__list-text--weight-bold.lawyer__list-text--color-green Автоправо, налоговое право, получение виз, права потребителей, уголовное право, административное право
+          .lawyer__links
+            a(href="#").lawyer__link Связаться с юристом
+            a(href="#").lawyer__link Отзывы
+          .lawyer__slider
+            .lawyer__slide
+              a(href="#").lawyer__slide-link
+                .lawyer__image
+                  +picture('static/images/content/lawyer', 'lawyer-user-1', ['webp', 'png'], '')
+                span.lawyer__text Иванов Иван Иванович
+            .lawyer__slide
+              a(href="#").lawyer__slide-link
+                .lawyer__image
+                  +picture('static/images/content/lawyer', 'lawyer-user-2', ['webp', 'png'], '')
+                span.lawyer__text Иванов Иван Иванович
+            .lawyer__slide
+              a(href="#").lawyer__slide-link
+                .lawyer__image
+                  +picture('static/images/content/lawyer', 'lawyer-user-3', ['webp', 'png'], '')
+                span.lawyer__text Иванов Иван Иванович
+            .lawyer__slide
+              a(href="#").lawyer__slide-link
+                .lawyer__image
+                  +picture('static/images/content/lawyer', 'lawyer-user-4', ['webp', 'png'], '')
+                span.lawyer__text Иванов Иван Иванович
+            .lawyer__slide
+              a(href="#").lawyer__slide-link
+                .lawyer__image
+                  +picture('static/images/content/lawyer', 'lawyer-user-1', ['webp', 'png'], '')
+                span.lawyer__text Иванов Иван Иванович
+            .lawyer__slide
+              a(href="#").lawyer__slide-link
+                .lawyer__image
+                  +picture('static/images/content/lawyer', 'lawyer-user-2', ['webp', 'png'], '')
+                span.lawyer__text Иванов Иван Иванович
+            .lawyer__slide
+              a(href="#").lawyer__slide-link
+                .lawyer__image
+                  +picture('static/images/content/lawyer', 'lawyer-user-3', ['webp', 'png'], '')
+                span.lawyer__text Иванов Иван Иванович
+            .lawyer__slide
+              a(href="#").lawyer__slide-link
+                .lawyer__image
+                  +picture('static/images/content/lawyer', 'lawyer-user-4', ['webp', 'png'], '')
+                span.lawyer__text Иванов Иван Иванович
+          .lawyer__arrows.lawyer__arrows--mobile
+  include pages/main/partners
+  include pages/main/statistics
+  include pages/main/steps
+  include pages/main/advantage
+  include pages/main/reviews
+  include pages/main/difference
+  include pages/main/information
+  include pages/main/banner

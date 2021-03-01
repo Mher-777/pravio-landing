@@ -1,0 +1,12 @@
+.DS_store
+package-lock.json
+node_modules
+.idea
+/*.exe.stackdump
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+*.code-workspace
+.history/

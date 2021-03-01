@@ -1,0 +1,51 @@
+.icon {
+  transition: all linear .2s;
+  display: inline-block;
+  fill: var(--color-white);
+}
+.icon-arrow-down {
+  fill: transparent;
+  stroke: var(--color-white);
+  width: 12px;
+  height: 7px;
+}
+.icon-question {
+  fill: #17BA9B;
+}
+.icon-facebook {
+  fill: transparent;
+  stroke: #fff;
+}
+.icon-telegram {
+  fill: transparent;
+  stroke: #fff;
+}
+.icon-arrow {
+  &--s {
+    &-small {
+      width: 17px;
+      height: 17px;
+    }
+  }
+  &--color {
+    &-orange {
+      fill: transparent;
+      stroke: var(--color-btn);
+    }
+    &-green {
+      fill: transparent;
+      stroke: var(--color-green);
+    }
+  }
+}
+.arrow {
+  position: absolute;
+  z-index: 1;
+  top: 40px;
+  &--left {
+    right: 0;
+  }
+  &--right {
+    left: 0;
+  }
+}
