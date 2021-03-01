@@ -1,0 +1,36 @@
+section.intro.intro--bgc
+	.intro__bg(data-bg="static/images/content/intro/intro-bg-2.jpg" data-bg-webp="static/images/content/intro/intro-bg-2.webp")
+		.intro__caption
+			h2.intro__subtitle Узнайте всё о Недвижимости! <br> Закажите <span>выписку&nbsp;из&nbsp;ЕГРН</span>онлайн
+			form(action="#").intro-form
+				.intro-form__item
+					input(type="text" placeholder="Например: 50:21:0140218:5625 или г Москва, ул Паперника, д 19, кв 4").intro-form__input
+					button(type="submit").intro-form__button
+						+icon('search_intro', 'intro-form__icon')
+				p.intro-form__desc Например: <span>50:21:0140218:5625</span> или г&nbsp;<span>Москва, ул Паперника, д 19, кв 4</span>
+				.intro-form-result
+					p.intro-form-result__desc Найдено адресов: <span>2</span>
+					.intro-form-result__content
+						.intro-form-result__head
+							.intro-form-result__name Кад. номер
+							.intro-form-result__name Источник
+							.intro-form-result__name Адрес
+						.intro-form-result__body
+							.intro-form-result__item
+								.intro-form-result__num 77:04:0002007:4180
+								.intro-form-result__source ЕГРН
+								.intro-form-result__address г Москва, ул Паперника, д 19, кв 2
+								a(href="").intro-form-result__choose Выбрать
+							.intro-form-result__item
+								.intro-form-result__num 77:04:0002007:4180
+								.intro-form-result__source ЕГРН
+								.intro-form-result__address г Москва, ул Паперника, д 19, кв 2
+								a(href="").intro-form-result__choose Выбрать
+	.intro-bottom
+		.intro-bottom__img
+			+picture('static/images/common', 'gerb', ['webp', 'png'], '')
+		p.intro-bottom__desc Онлайн-сервис проверки недвижимости поможет Вам узнать, кто является собственником объекта недвижимости, сколько собственников у объекта недвижимости, а также когда было зарегистрировано право собственности. Получите у нас на сайте официальные данные Росреестра
+
+
+
+

@@ -1,0 +1,30 @@
+#popupData.popup.popup--sm
+	.popup__caption
+		h3.popup__title Данные для получения выписки
+		p.popup__desc.popup__desc--gray Укажите почту и номер телефона, для связи  Вами
+	.popup__content
+		form.popup__form(action="#")
+			.popup__item
+				.popup__group
+					input(type="email" placeholder="Ваш E-mail" required="").popup__input
+				.popup__group
+					input(type="tel" placeholder="Ваш номер телефона" required="").popup__input
+			.popup__item
+				label.popup__label
+					i Даю согласие на информирование меня по электронной почте о статусе заказа
+					input(type="checkbox" name="email")
+					span
+				label.popup__label
+					i Даю согласие на обработку персональных данных, с "Политикой кониденциальности" ознакомился(-лась)
+					input(type="checkbox" name="personal")
+					span
+			.popup-block
+				span.popup-block__icon !
+				p.popup-block__text После готовности выписки мы вышлем данный документ на указанную Вами почту на указанный вами номер телефона придет смс-оповещение
+			.popup-buttons
+				button(type="submit").popup-buttons__btn.popup-buttons__btn--white.btn.btn--size-tiny Назад
+				button(type="submit").popup-buttons__btn.btn.btn--bg-orange.btn--size-tiny Далее
+
+
+
+
