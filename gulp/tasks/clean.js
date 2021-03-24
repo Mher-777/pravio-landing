@@ -1,9 +1,16 @@
-const del = require('del');
+// Gulp Task: clean
+// Description: deletes dist folder
+// npm install --save-dev del gulp-load-plugins
+// =========================================================
 
-// Полностью удаляем папку dist
+let path = require('../settings/path.json'),
+	del = require('del');
 
-module.exports = function clean(cb) {
-  return del('dist').then(() => {
-    cb()
-  })
+module.exports = (gulp, plugins) => {
+
+    return async () => {
+    	
+	    del.sync('dist');
+
+    };
 };
