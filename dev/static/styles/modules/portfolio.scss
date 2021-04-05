@@ -8,6 +8,8 @@
   &__inner {
     display: flex;
     align-items: flex-start;
+    position: relative;
+    z-index: 2;
     @media (max-width: 830px) {
       flex-direction: column;
       align-items: center;
@@ -194,7 +196,6 @@
   }
   &__items {
     display: flex;
-    flex-wrap: wrap;
     @media (max-width: 580px) {
       display: none;
     }
